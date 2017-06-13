@@ -46,7 +46,7 @@ CREATE TABLE `rooms` (
 
 CREATE TABLE `messages` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `text` MEDIUMTEXT NOT NULL DEFAULT 'NULL',
+  `text` MEDIUMTEXT NOT NULL,
   `timestamp` INTEGER(20) NOT NULL,
   `id_rooms` INTEGER(10) NOT NULL,
   `id_users` INTEGER(10) NOT NULL,
