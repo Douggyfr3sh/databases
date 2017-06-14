@@ -15,12 +15,11 @@ USE chat;
  *    mysql -u root < server/schema.sql
  *  to create the database and the tables.*/
 
--- DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` INTEGER(10) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL DEFAULT 'NULL',
-  `friends` MEDIUMTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
