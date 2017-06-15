@@ -31,11 +31,15 @@ module.exports = {
 
   users: {
     // Ditto as above.
-    get: function () {},
-    post: function (msg, callback) {
-      var usersSql = 'INSERT INTO users (name) VALUES (?)';
-      var usersParams = [msg.username];
-      db.query(usersSql, usersParams, function(err, results) {
+    get: function (callback) {
+      var queryString = 'SELECT * FROM users';
+      db.query(queryString, (err, results) => {
+        callback(err,results);
+      });
+    },
+    post: function (data, callback) {
+      var queryString = 'INSERT INTO users (name) VALUES (?)';
+      db.query(queryString, (err, results) => {
         callback(err, results);
       });
     }
