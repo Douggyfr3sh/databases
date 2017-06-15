@@ -39,18 +39,23 @@ module.exports = {
     },
     post: function (data, callback) {
       var queryString = 'INSERT INTO users (name) VALUES (?)';
-      db.query(queryString, (err, results) => {
+      db.query(queryString, data, (err, results) => {
         callback(err, results);
       });
     }
   },
 
   rooms: {
-    get: function() {},
-    post: function (msg, callback) {
-      var roomsSql = 'INSERT INTO rooms (name) VALUES (?)';
-      var roomsParams = [msg.roomname];
-      db.query(roomsSql, roomsParams, function(err, results) {
+    get: function(callback) {
+      var queryString = 'SELECT * FROM rooms';
+      db.query(queryString, (err,results) => {
+        callback(err,results);
+      });
+
+    },
+    post: function (data, callback) {
+      var queryString = 'INSERT INTO rooms (name) VALUES (?)';
+      db.query(roomsSql, data, function(err, results) {
         callback(err, results);
       });
     }
