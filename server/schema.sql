@@ -15,7 +15,7 @@ USE chat;
  *    mysql -u root < server/schema.sql
  *  to create the database and the tables.*/
 
-DROP TABLE IF EXISTS `users`;
+-- DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` INTEGER(10) NOT NULL AUTO_INCREMENT,
@@ -41,7 +41,7 @@ CREATE TABLE `rooms` (
 --
 -- ---
 
-DROP TABLE IF EXISTS `messages`;
+-- DROP TABLE IF EXISTS `messages`;
 
 CREATE TABLE `messages` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,

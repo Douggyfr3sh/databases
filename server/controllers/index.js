@@ -20,7 +20,7 @@ module.exports = {
 
     post: function (req, res) {
       var data = [req.body.message, req.body.roomname, req.body.username];
-      models.messages.post(msgParams, (err, results) => {
+      models.messages.post(data, (err, results) => {
         if (err) {
           console.error(err);
         } else {

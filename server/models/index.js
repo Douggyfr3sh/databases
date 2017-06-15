@@ -9,10 +9,9 @@ module.exports = {
         messages.id_rooms rooms.id AND \
         messages.id_users = users.id \
         ORDER BY messages.id DESC';
-      var queryArgs = [];
 
       db.query(queryString, (err, results) => {
-        callback(results);
+        callback(err, results);
       });
     },
 
@@ -55,7 +54,7 @@ module.exports = {
     },
     post: function (data, callback) {
       var queryString = 'INSERT INTO rooms (name) VALUES (?)';
-      db.query(roomsSql, data, function(err, results) {
+      db.query(queryString, data, function(err, results) {
         callback(err, results);
       });
     }
