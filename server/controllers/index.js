@@ -10,6 +10,7 @@ module.exports = {
     // a function which handles a get request for all messages
     get: function (req, res) {
       models.messages.get( (err, results) => {
+        console.log('get messages reached');
         if (err) {
           console.error(err);
         } else {
@@ -19,6 +20,7 @@ module.exports = {
     },
 
     post: function (req, res) {
+      console.log('post message reached', req);
       var data = [req.body.message, req.body.roomname, req.body.username];
       models.messages.post(data, (err, results) => {
         if (err) {
